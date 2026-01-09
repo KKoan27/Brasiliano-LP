@@ -75,30 +75,52 @@ header nav li a {
 }
 
 .text-overlay {
-    list-style-type: none;
-    font-size: large;
+
+    /* Setando essas propriedades para o texto ficar dentro da imagem */
+    
     position: absolute;
-    /* Tira do fluxo normal para ficar sobre a imagem */
     right: 0;
     top: 0;
-    height: 90%;
-    /* Ocupa a altura total da imagem */
-    width: 300px;
-
-
+    height: 100%;
+    width: 250px;
+    margin: 0; 
     z-index: 1;
-    /* A MÁGICA DO ESCURECIMENTO */
-    /* Preto (0,0,0) com 60% de opacidade (0.6) */
+
+    /* Tela de fundo com blur */
     background-color: rgba(0, 0, 0, 0.6);
-
-    /* A MÁGICA DO BLUR (Desfoque) */
-    /* Aplica um desfoque de 20px no que estiver ATRÁS deste elemento */
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    /* Necessário para funcionar no Safari */
-
-    /* Estilização do Texto */
+     border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius:  q;
+    /* Lista de dentro */
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    font-size: large;
     color: white;
-    padding: 40px;
+    border: none;
+    font-size: larger;
+    
+   
 
+}
+
+
+.text-overlay::before{
+    content:  "";
+    position: absolute;
+    top: 0;
+    left: -30px;          /* empurra para dentro da imagem */
+    width: 30px;          /* largura do blur */
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0)
+    );
+
+    filter: blur(12px);
+    z-index: -1
 }
