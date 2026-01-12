@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="">Cardapio</a></li>
+                <li><a href="#mainItens">Cardapio</a></li>
                 <li><a href="">Contato</a></li>
             </ul>
         </nav>
@@ -28,16 +28,39 @@
         <section id="heroSection">
             <h2>Venha conhecer o melhor restaurante de Sorocaba</h2>
 
-            <div>
-                <ul class="text-overlay">
-                    <li><p>Sabor que abraça</p></li>
-    <li><p>Comida típica brasileira</p></li>
-    <li><p>Receitas tradicionais</p></li>
-    <li><p>Feito com ingredientes frescos</p></li>
-    <li><p>Almoço caseiro todos os dias</p></li>
-                </ul>
-                <img src="/Assets/HeroImage.png" alt="heroImage" width=1200 height=600>
+            <div id="controlswipe">
+
+                <button class="btn-prev" aria-label="Anterior"> <svg viewBox="0 0 24 24" class="icon">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg></button>
+
+                <div>
+                    <ul class="text-overlay">
+                        <li>
+                            <p>Sabor que abraça</p>
+                        </li>
+                        <li>
+                            <p>Comida típica brasileira</p>
+                        </li>
+                        <li>
+                            <p>Receitas tradicionais</p>
+                        </li>
+                        <li>
+                            <p>Feito com ingredientes frescos</p>
+                        </li>
+                        <li>
+                            <p>Almoço caseiro todos os dias</p>
+                        </li>
+                    </ul>
+                    <img src="/Assets/HeroImage.png" alt="heroImage" width=1300 height=600>
+                </div>
+                <button class="btn-next" aria-label="Próximo">
+                    <svg viewBox="0 0 24 24" class="icon">
+                        <path d="M9 6l6 6-6 6" />
+                    </svg>
+                </button>
             </div>
+
         </section>
 
         <section id="mainItens">
@@ -52,7 +75,6 @@
                         Um clássico da culinária brasileira, servido bem quente.
                     </p>
                 </li>
-
                 <li>
                     <h4>Feijoada Completa</h4>
                     <img src="Assets/Feijoada.jpeg" alt="Feijoada completa brasileira">
@@ -88,45 +110,68 @@
                         uma receita típica da culinária mineira.
                     </p>
                 </li>
+                <li>
+                    <h4>Virado a Paulista</h4>
+                    <img src="Assets/ViradoAPaulista.jpeg" alt="Feijão tropeiro tradicional">
+                    <p>
+                        é um prato icônico e farto da culinária de São Paulo, reconhecido como patrimônio cultural
+                        imaterial do estado. Feito com Tutu de feijão, Arroz, bisteca e Couve refogada.
+                    </p>
+                </li>
             </ul>
-
-
-
 
         </section>
 
         <section id="formasDeComer">
 
-            <div>
-                <h3>Self-Service</h3>
-                <p>
-                    Valor imperdivel : <b>R$7,50/100g</b>
-                </p>
-                <img src="" alt="selfServiceImg">
-            </div>
-            <div>
-                <h3>Delivery</h3>
-                <p>
+            <!-- SELF SERVICE -->
 
-                    Chega do trabalho e bate aquela preguiça para cozinhar ou até mesmo para ir até nossos
-                    estabelecimentos? <br>
-                    <a href="https://www.ifood.com.br" target="_blank">Acesse o nosso ifood</a>
-                </p>
-                <img src="" alt="ifoodImg">
+            <div class="card-formasDeComer">
+                <div>
+                    <h3>Self-Service</h3>
+                    <p>
+                        Valor imperdivel : <b>R$7,50/100g</b>
+                    </p>
+                </div>
+                <img src="Assets/SelfServiceIMG.png" alt="selfServiceImg">
             </div>
 
+            <!-- DELIVERY -->
+            <div class="card-formasDeComer">
 
-            <div>
-                <h3>Cardapio</h3>
+                <div>
+                    <h3>Delivery</h3>
+                    <p>
 
-                <p> Melhores opções já pronto para voce selecionar e chegar a sua mesa quentinho e saboroso</p>
+                        Chega do trabalho e bate aquela preguiça para cozinhar ou até mesmo para ir até nossos
+                        estabelecimentos? <br>
+                        <a href="https://www.ifood.com.br/busca?q=Restaurante" target="_blank">Acesse o nosso ifood</a>
+                    </p>
+                </div>
+
+                <img src="Assets/IfoodIMG.jpeg" alt="ifoodImg">
+            </div>
+            <!-- CARDAPIO -->
+
+            <div class="card-formasDeComer">
+
+                <div>
+                    <h3>Cardapio</h3>
+
+                    <p> Melhores opções já pronto para voce selecionar e chegar a sua mesa quentinho e saboroso</p>
+                </div>
+                <img src="Assets/CardapioIMG.png" alt="">
             </div>
 
-            <div>
-                <h3>Rodizio</h3>
+            <!-- RODIZIO -->
+            <div class="card-formasDeComer">
 
+                <div>
+                    <h3>Rodizio</h3>
 
-
+                    <p>Coma a vontade por apenas <b>R$49,99</b></p>
+                </div>
+                <img src="Assets/RodizioIMG.png" alt="RodizioIMG">
             </div>
 
 

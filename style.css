@@ -1,3 +1,11 @@
+/* Variaveis de cores */
+
+:root {
+
+    --primarycolor: black;
+    --secundarycolor: rgb(255, 186, 57);
+}
+
 body,
 :root,
 html {
@@ -39,6 +47,43 @@ header nav li a {
 
 
 
+#heroSection #controlswipe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Utilizando SVG inline */
+
+#heroSection #controlswipe button {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#controlswipe button {
+    border: none;
+    border: rgb(255, 186, 57)solid;
+    margin: black;
+}
+
 #heroSection {
 
     height: 100vh;
@@ -54,6 +99,7 @@ header nav li a {
 
     align-self: flex-start;
     margin-bottom: 2rem;
+    padding-left: cap;
 
 }
 
@@ -77,21 +123,19 @@ header nav li a {
 .text-overlay {
 
     /* Setando essas propriedades para o texto ficar dentro da imagem */
-    
     position: absolute;
     right: 0;
     top: 0;
     height: 100%;
     width: 250px;
-    margin: 0; 
+    margin: 0;
     z-index: 1;
-
     /* Tela de fundo com blur */
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(20px);
-     border-top-right-radius: 20px;
+    border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border-bottom-left-radius:  q;
+    border-bottom-left-radius: q;
     /* Lista de dentro */
     display: flex;
     flex-direction: column;
@@ -101,26 +145,117 @@ header nav li a {
     color: white;
     border: none;
     font-size: larger;
-    
-   
-
 }
 
-
-.text-overlay::before{
-    content:  "";
+.text-overlay::before {
+    content: "";
     position: absolute;
     top: 0;
-    left: -30px;          /* empurra para dentro da imagem */
-    width: 30px;          /* largura do blur */
+    left: -30px;
+    /* empurra para dentro da imagem */
+    width: 30px;
+    /* largura do blur */
     height: 100%;
 
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0)
-    );
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0));
 
     filter: blur(12px);
     z-index: -1
+}
+
+#mainItens {
+
+    text-align: center;
+}
+
+
+#mainItens ul {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.20);
+    padding: 2rem;
+    list-style: none;
+}
+
+#mainItens ul li {
+    text-align: center;
+    font-size: 2ch;
+    border: 5px rgba(255, 203, 108, 0.422) solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+
+}
+
+#mainItens li img {
+    height: auto;
+    width: 90%;
+    border-radius: 20px;
+    margin: 1rem 0;
+    min-height: 50%;
+}
+
+#mainItens li:hover {
+
+    transform: translateX(-4px);
+    background-color: var(--secundarycolor);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+#formasDeComer {
+    display: flex;
+    flex-flow: nowrap column;
+    font-size: large;
+    gap: 9px;
+
+}
+
+#formasDeComer .card-formasDeComer {
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+    border-radius: 20px;
+    margin: 0 10px;
+    padding-left: 20px;
+}
+
+.card-formasDeComer img {
+    min-height: 200px;
+    height: 300px;
+    padding-right: 50px;
+    align-self: end;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 0.8s ease;
+}
+
+
+.card-formasDeComer:hover img {
+
+    opacity: 1;
+    transform: translateX(50px);
+}
+
+/* PEGANDO CADA POSIÇÂO DOS CARDS INDIVIDUALMENTE */
+
+
+
+.card-formasDeComer:nth-child(1) {
+    background-color: rgba(31, 88, 31, 0.607);
+}
+
+.card-formasDeComer:nth-child(2) {
+    background-color: rgba(180, 20, 35);
+}
+
+.card-formasDeComer:nth-child(3) {
+    background-color: rgba(204, 174, 143);
+}
+
+.card-formasDeComer:nth-child(4) {
+    background-color: rgba(165, 83, 42, 0.864);
 }
