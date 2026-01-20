@@ -8,7 +8,7 @@
     /* Laranja Terracota (destaques/botões) */
     --accent-gold: #ffb300;
     /* Amarelo Ouro (detalhes) */
-    --card-shadow: rgba(62, 39, 35, 0.2);
+    --card-shadow: rgba(62, 39, 35, 0.3);
     /* Sombra marrom suave */
 }
 
@@ -19,7 +19,6 @@ html {
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
-    /* Adicionado fundo creme */
     color: var(--primarycolor);
     /* Cor padrão do texto */
 }
@@ -115,7 +114,6 @@ header nav li a:hover {
     align-self: flex-start;
     margin-bottom: 2rem;
     padding-left: 10%;
-    /* Correção do 'cap' que não existe */
     color: var(--secundarycolor);
 }
 
@@ -143,7 +141,6 @@ header nav li a:hover {
     width: 250px;
     margin: 0;
     z-index: 1;
-    /* Tela de fundo com blur - Ajustado para Marrom Escuro */
     background-color: rgba(45, 25, 20, 0.75);
     backdrop-filter: blur(10px);
     border-top-right-radius: 20px;
@@ -188,7 +185,7 @@ header nav li a:hover {
 
 #mainItens ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin: 2rem auto;
     border-radius: 12px;
@@ -247,10 +244,19 @@ header nav li a:hover {
     border-radius: 20px;
     margin: 0 10px;
     padding-left: 20px;
-    color: white;
-    box-shadow: 0 5px 15px var(--card-shadow);
+    box-shadow: 2px 8px 19px var(--card-shadow);
     height: 300px;
+    border: 2px solid rgba(216, 67, 21, 0.2);
+    background-color: #ffffff;
+    transition: background 0.4s;
 
+
+}
+
+.card-formasDeComer div h3 {
+
+    color: var(--secundarycolor);
+    transition: background-color 0.4s, border-color 0.4s;
 }
 
 .card-formasDeComer h3 {
@@ -265,52 +271,69 @@ header nav li a:hover {
 }
 
 .card-formasDeComer img {
-    min-height: 200px;
+    min-height: 250px;
     height: 300px;
-    padding-right: 50px;
+
     align-self: end;
     object-fit: cover;
     opacity: 0.8;
-    /* Pequena opacidade inicial */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.4s;
 }
 
 .card-formasDeComer:hover img {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateX(-15px);
     /* Zoom sutil fica melhor que mover p/ lado */
 }
 
-/* CORES DOS CARDS - Ajustadas para tons mais apetitosos */
-
-/* Self-Service: Verde Oliva (Salada/Fresco) */
-.card-formasDeComer:nth-child(1) {
-    background-color: #558b2f;
+/* CARD SELF-SERVICE - VERDE */
+#formasDeComer .card-formasDeComer:nth-child(1):hover {
+    background-color: #7cb342;
+    border-color: #7cb342;
 }
 
-/* Delivery: Vermelho iFood (Ação/Rápido) */
-.card-formasDeComer:nth-child(2) {
-    background-color: #c62828;
+#formasDeComer .card-formasDeComer:nth-child(1):hover h3 {
+    color: #ffffff;
 }
 
-/* Cardápio: Laranja Abóbora (Apetite) */
-.card-formasDeComer:nth-child(3) {
-    background-color: #ef6c00;
+/* CARD IFOOD - VERMELHO */
+#formasDeComer .card-formasDeComer:nth-child(2):hover {
+    background-color: #ef5350;
+    border-color: #ef5350;
 }
 
-/* Rodízio: Marrom Churrasco (Carnes) */
-.card-formasDeComer:nth-child(4) {
-    background-color: #5d4037;
+#formasDeComer .card-formasDeComer:nth-child(2):hover h3 {
+    color: #ffffff;
 }
+
+/* CARD CARDAPIO - LARANJA  */
+#formasDeComer .card-formasDeComer:nth-child(3):hover {
+    background-color: #fb8c00;
+    border-color: #fb8c00;
+}
+
+#formasDeComer .card-formasDeComer:nth-child(3):hover h3 {
+    color: #ffffff;
+}
+
+/* CARD RODIZIO - MARROM  */
+#formasDeComer .card-formasDeComer:nth-child(4):hover {
+    background-color: #8d6e63;
+    border-color: #8d6e63;
+}
+
+#formasDeComer .card-formasDeComer:nth-child(4):hover h3 {
+    color: #ffffff;
+}
+
 
 
 #rating {
-    width: 90%;
-    max-width: 800px;
+    width: 50%;
+    max-width: 600px;
     position: relative;
-    margin: 10px;
+    margin: auto;
     overflow: hidden;
-    box-shadow: 0 10px 25px var(--card-shadow);
     border-radius: 10px;
     background: white;
 }
@@ -325,14 +348,15 @@ header nav li a:hover {
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    gap: 2rem;
 }
 
 .card {
-    min-width: 34.00%;
+    min-width: 33.00%;
+
     height: 350px;
-    /* MUDANÇA PRINCIPAL: Gradiente Laranja/Vermelho (Quente) ao invés de Roxo (Frio) */
-    background: linear-gradient(135deg, #ff8f00, #d84315);
-    color: white;
+    color: black;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,9 +364,9 @@ header nav li a:hover {
     font-weight: bold;
     flex-direction: column;
     padding: 10px;
-    box-sizing: border-box;
-    /* Garante que o padding não quebre o layout */
+    box-sizing: content-box;
     text-align: center;
+    box-shadow: 3px 3px 10px var(--card-shadow);
 }
 
 .card .nome {
@@ -358,6 +382,15 @@ header nav li a:hover {
     margin-top: auto;
 }
 
+.card-fiveStars {
+
+    color: rgb(245, 195, 13);
+}
+
+.card-fourStars {
+    color: rgba(241, 211, 103, 0.994);
+}
+
 
 .carousel-btn {
     position: absolute;
@@ -365,7 +398,6 @@ header nav li a:hover {
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.8);
     color: var(--secundarycolor);
-    /* Seta laranja */
     border: none;
     padding: 15px;
     cursor: pointer;

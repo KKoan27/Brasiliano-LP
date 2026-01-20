@@ -40,3 +40,8 @@ window.addEventListener('resize', () => {
     slideWidth = slides[0].getBoundingClientRect().width;
     moveToSlide(currentSlideIndex); // Realinha o carrossel
 });
+
+
+
+
+
