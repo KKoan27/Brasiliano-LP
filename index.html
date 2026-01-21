@@ -28,39 +28,44 @@
         <section id="heroSection">
             <h2>Venha conhecer o melhor restaurante de Sorocaba</h2>
 
-            <div id="controlswipe">
+            <div class="carousel-container">
 
-                <button class="btn-prev" aria-label="Anterior"> <svg viewBox="0 0 24 24" class="icon">
+                <button class="carousel-btn btn-prev" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" class="icon">
                         <path d="M15 18l-6-6 6-6" />
-                    </svg></button>
+                    </svg>
+                </button>
 
-                <div>
-                    <ul class="text-overlay">
-                        <li>
-                            <p>Sabor que abraça</p>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <img src="/Assets/HeroImage.png" alt="Sabor que abraça">
+                            <div class="text-overlay">
+                                <p>Sabor que abraça</p>
+                            </div>
                         </li>
-                        <li>
-                            <p>Comida típica brasileira</p>
+                        <li class="carousel-slide">
+                            <img src="Assets/ComidaTipicas.jpg" alt="Comida típica">
+                            <div class="text-overlay">
+                                <p>Comida típica brasileira</p>
+                            </div>
                         </li>
-                        <li>
-                            <p>Receitas tradicionais</p>
-                        </li>
-                        <li>
-                            <p>Feito com ingredientes frescos</p>
-                        </li>
-                        <li>
-                            <p>Almoço caseiro todos os dias</p>
+                        <li class="carousel-slide">
+                            <img src="Assets/IngredientesFrescos.jpg" alt="Ingredientes Frescos">
+                            <div class="text-overlay">
+                                <p>Feito com ingredientes frescos</p>
+                            </div>
                         </li>
                     </ul>
-                    <img src="/Assets/HeroImage.png" alt="heroImage" width=1300 height=600>
                 </div>
-                <button class="btn-next" aria-label="Próximo">
+
+                <button class="carousel-btn btn-next" aria-label="Próximo">
                     <svg viewBox="0 0 24 24" class="icon">
                         <path d="M9 6l6 6-6 6" />
                     </svg>
                 </button>
-            </div>
 
+            </div>
         </section>
 
         <section id="mainItens">
@@ -311,7 +316,8 @@
 
     </footer>
 
-    <script src="main.js"></script>
+    <script src="carroselHeroSection.js"></script>
+    <script src="carrosselAvaliacao.js"></script>
 </body>
 
 </html>

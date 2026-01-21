@@ -60,29 +60,133 @@ header nav li a:hover {
     color: white;
 }
 
-#heroSection #controlswipe {
+#heroSection {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
 }
 
-/* Utilizando SVG inline */
-#heroSection #controlswipe button {
-    background: rgba(62, 39, 35, 0.7);
-    /* Fundo marrom translúcido */
-    border: none;
+#heroSection h2 {
+    margin-bottom: 2rem;
+    color: var(--secundarycolor);
+    text-align: center;
+}
+
+/* Container principal do carrossel e botões */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    /* Largura máxima igual à da imagem */
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Área que esconde os slides fora de visão */
+.carousel-track-container {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 35px;
+    box-shadow: 0 10px 20px var(--card-shadow);
+}
+
+/* A trilha que se move */
+.carousel-track {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide individual */
+.carousel-slide {
+    min-width: 100%;
+    /* Cada slide ocupa 100% do container */
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texto sobre a imagem */
+.text-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    /* Aumentei um pouco para caber melhor */
+    background-color: rgba(45, 25, 20, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff8e1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-top-right-radius: 35px;
+    /* Mesma borda da imagem */
+    border-bottom-right-radius: 35px;
+}
+
+/* Gradiente lateral do texto */
+.text-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(45, 25, 20, 0), rgba(45, 25, 20, 0.85));
+    z-index: -1;
+}
+
+/* Botões */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(62, 39, 35, 0.8);
+    border: 2px solid white;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
     transition: background 0.3s;
 }
 
-#heroSection #controlswipe button:hover {
+.carousel-btn:hover {
     background: var(--secundarycolor);
+}
+
+.btn-prev {
+    left: -25px;
+}
+
+/* Posiciona levemente fora para estilo */
+.btn-next {
+    right: -25px;
 }
 
 .icon {
@@ -90,89 +194,11 @@ header nav li a:hover {
     height: 24px;
     fill: none;
     stroke: white;
-    stroke-width: 2.5;
+    stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
-#controlswipe button {
-    border: 2px solid white;
-    /* Borda branca fica melhor no hero */
-    margin: 10px;
-    /* Ajuste de margem */
-}
-
-#heroSection {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#heroSection h2 {
-    align-self: flex-start;
-    margin-bottom: 2rem;
-    padding-left: 10%;
-    color: var(--secundarycolor);
-}
-
-#heroSection div {
-    display: inline-block;
-    flex-direction: row-reverse;
-    position: relative;
-}
-
-#heroSection img {
-    border: none;
-    border-radius: 35px;
-    position: relative;
-    object-fit: cover;
-    display: block;
-    box-shadow: 0 10px 20px var(--card-shadow);
-}
-
-.text-overlay {
-    /* Setando essas propriedades para o texto ficar dentro da imagem */
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 250px;
-    margin: 0;
-    z-index: 1;
-    background-color: rgba(45, 25, 20, 0.75);
-    backdrop-filter: blur(10px);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-
-    /* Lista de dentro */
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    justify-content: center;
-    font-size: large;
-    color: #fff8e1;
-    /* Texto levemente amarelado para leitura */
-    border: none;
-    font-size: larger;
-}
-
-.text-overlay::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -30px;
-    /* empurra para dentro da imagem */
-    width: 30px;
-    /* largura do blur */
-    height: 100%;
-    background: linear-gradient(to right,
-            rgba(45, 25, 20, 0.75),
-            rgba(0, 0, 0, 0));
-    filter: blur(12px);
-    z-index: -1
-}
 
 #mainItens {
     text-align: center;
