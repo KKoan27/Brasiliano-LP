@@ -10,7 +10,7 @@ Este projeto consiste em uma Landing Page para um restaurante fictício, criada 
 
 As imagens utilizadas no layout foram geradas por **Inteligência Artificial**, permitindo a criação de uma identidade visual única e agradável para o ambiente do restaurante.
 
-## ecnologias Utilizadas
+## Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as tecnologias nativas da web:
 
@@ -20,12 +20,7 @@ O projeto foi desenvolvido utilizando as tecnologias nativas da web:
 
 ## Roadmap e Melhorias Futuras
 
-Este projeto está em evolução constante. Os próximos passos planejados são:
-
-- [ ] Melhorar a responsividade para dispositivos móveis.
-- [ ] Adicionar animações suaves e transições com CSS/JS.
-- [ ] Implementar um formulário de reserva funcional.
-- [ ] **Expansão:** Desenvolver um sistema completo de gerenciamento para o restaurante (Backend + Banco de Dados).
+Este projeto está em evolução constante. O próximo passo planejado é desenvolver um sistema completo de gerenciamento para o restaurante (Backend + Banco de Dados).
 
 ## ℹ️ LINK PARA ACESSO:
 https://kkoan27.github.io/Brasiliano-LP/
